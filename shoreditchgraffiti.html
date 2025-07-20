@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shoreditch Graffiti Archive</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Interactive Map: Shoreditch Graffiti Archive</h2>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  // Initialize map centered around Shoreditch
+  var map = L.map('map').setView([51.522, -0.075], 17);
+
+  // Add OpenStreetMap tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Add markers
+  const graffitiLocations = [
+  { lat: 51.522491, lng: -0.075314, img: "IMG_2647.JPG" },
+    { lat: 51.523453, lng: -0.074914, img: "IMG_2660.JPG" },
+    { lat: 51.523117, lng: -0.075117, img: "IMG_2666.JPG" },
+    { lat: 51.523117, lng: -0.074928, img: "IMG_2668.JPG" },
+    { lat: 51.523503, lng: -0.075381, img: "IMG_2670.JPG" },
+    { lat: 51.523578, lng: -0.075236, img: "IMG_2680.JPG" },
+    { lat: 51.522544, lng: -0.075464, img: "IMG_2688.JPG" },
+    { lat: 51.522309, lng: -0.075331, img: "IMG_2690.JPG" },
+    { lat: 51.522309, lng: -0.075347, img: "IMG_2691.JPG" },
+    { lat: 51.522253, lng: -0.075395, img: "IMG_2693.JPG" },
+    { lat: 51.522483, lng: -0.075411, img: "IMG_2699.JPG" },
+    { lat: 51.522598, lng: -0.075456, img: "IMG_2700.JPG" },
+    { lat: 51.523697, lng: -0.074714, img: "IMG_2712.JPG" },
+    { lat: 51.523711, lng: -0.074509, img: "IMG_2716.JPG" },
+    { lat: 51.523947, lng: -0.074669, img: "IMG_2720.JPG" },
+    { lat: 51.523978, lng: -0.074845, img: "IMG_2723.JPG" },
+    { lat: 51.524475, lng: -0.074573, img: "IMG_2727.JPG" },
+    { lat: 51.52437, lng: -0.075148, img: "IMG_2732.JPG" },
+    { lat: 51.523958, lng: -0.075003, img: "IMG_2741.JPG" },
+    { lat: 51.523792, lng: -0.074961, img: "IMG_2743.JPG" },
+    { lat: 51.523697, lng: -0.074401, img: "IMG_2748.JPG" },
+    { lat: 51.523769, lng: -0.073994, img: "IMG_2754.JPG" },
+    { lat: 51.523681, lng: -0.073836, img: "IMG_2757.JPG" },
+    { lat: 51.523631, lng: -0.073303, img: "IMG_2760.JPG" },
+    { lat: 51.525753, lng: -0.086408, img: "IMG_2779 2.JPG" },
+    { lat: 51.525781, lng: -0.086439, img: "IMG_2780 2.JPG" },
+    { lat: 51.52605, lng: -0.087028, img: "IMG_2783 2.JPG" },
+    { lat: 51.526861, lng: -0.083669, img: "IMG_2793.JPG" },
+    { lat: 51.526353, lng: -0.084717, img: "IMG_2802.JPG" },
+    { lat: 51.524548, lng: -0.079898, img: "IMG_2822.JPG" },
+    { lat: 51.521056, lng: -0.074456, img: "IMG_2839.JPG" },
+    { lat: 51.521217, lng: -0.07475, img: "IMG_2842.JPG" },
+    { lat: 51.521586, lng: -0.073464, img: "IMG_2857.JPG" },
+    { lat: 51.523431, lng: -0.0785, img: "IMG_2871.JPG" },
+    { lat: 51.5234, lng: -0.078571, img: "IMG_2872.JPG" },
+    { lat: 51.52245, lng: -0.075419, img: "IMG_2903.JPG" },
+    { lat: 51.521014, lng: -0.073131, img: "IMG_2906.JPG" },
+    { lat: 51.522589, lng: -0.071658, img: "IMG_2910.JPG" },
+    { lat: 51.523394, lng: -0.071667, img: "IMG_2911.JPG" },
+    { lat: 51.523239, lng: -0.071453, img: "IMG_2913.JPG" },
+    { lat: 51.522572, lng: -0.071575, img: "IMG_2915.JPG" },
+    { lat: 51.522358, lng: -0.071669, img: "IMG_2916.JPG" },
+    { lat: 51.522189, lng: -0.071714, img: "IMG_2917.JPG" },
+    { lat: 51.522081, lng: -0.07166, img: "IMG_2919.JPG" },
+    { lat: 51.522639, lng: -0.071156, img: "IMG_2922.JPG" },
+    { lat: 51.522636, lng: -0.071086, img: "IMG_2924.JPG" },
+    { lat: 51.522717, lng: -0.070622, img: "IMG_2925.JPG" },
+    { lat: 51.522675, lng: -0.070864, img: "IMG_2926.JPG" },
+    { lat: 51.526431, lng: -0.084986, img: "IMG_2927.JPG" }
+  ];
+
+  graffitiLocations.forEach(loc => {
+    L.marker([loc.lat, loc.lng])
+      .addTo(map)
+      .bindPopup(`<strong>${loc.img}</strong><br><img src="graffiti/${loc.img}" width="200px">`);
+  });
+</script>
+
+</body>
+</html>

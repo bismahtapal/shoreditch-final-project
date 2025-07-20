@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shoreditch Speaks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk&display=swap" rel="stylesheet">
+  <style>
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+header {
+  background-color: transparent;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  height: 100vh; /* Full screen height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0; /* ← add this */
+}
+
+.parallax-title {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.parallax-title video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  object-position: center center; /* ← Add this line */
+  z-index: -1;
+  filter: brightness(0.5);
+  min-width: 100vw; /* ✅ ADD THIS */
+  min-height: 100vh; /* ✅ ADD THIS */
+}
+
+.overlay-text {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
+  z-index: 2; /* ← ADD THIS */
+  position: relative;
+  color: white;
+}
+
+.parallax-title h1 {
+  font-family: 'Bungee', sans-serif;
+  color: #f15bb5;
+  font-size: 4rem;
+  margin: 0;
+}
+
+.parallax-title p {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #fcd5ce;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+    header p {
+  color: #fcd5ce; /* soft coral-peach tone, can adjust if you'd like something punchier */
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
+
+    header h1 {
+      font-family: 'Bungee', sans-serif;
+      font-size: 4rem;
+      margin: 0;
+      letter-spacing: -1px;
+      color: #f15bb5;
+    }
+
+    h2.profile {
+      font-family: 'Bungee', sans-serif;
+      margin-top: 5rem;
+    }
+
+    .quote {
+      font-family: 'Space Grotesk', sans-serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      border-left: 3px solid;
+      padding-left: 1rem;
+      margin: 2rem 0;
+    }
+
+    h2.map-title {
+  text-align: center;
+  color: #ffb703;
+  font-family: 'Bungee', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+    h2.profile.profile-1 { color: #ffadad; }
+.quote.quote-1 { color: #ffadad; border-left-color: #ffadad; }
+
+h2.profile.profile-2 { color: #ffd6a5; }
+.quote.quote-2 { color: #ffd6a5; border-left-color: #ffd6a5; }
+
+h2.profile.profile-3 { color: #caffbf; }
+.quote.quote-3 { color: #caffbf; border-left-color: #caffbf; }
+
+h2.profile.profile-4 { color: #80bfff; }
+.quote.quote-4 { color: #80bfff; border-left-color: #80bfff; }
+
+h2.profile.profile-5 { color: #a0c4ff; }
+.quote.quote-5 { color: #a0c4ff; border-left-color: #a0c4ff; }
+
+h2.last-words { color: #bdb2ff; font-family: 'Bungee', sans-serif; margin-top: 5rem; }
+
+.profile-section {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 6px solid;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  margin: 6rem 0;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+}
+
+    section {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      position: relative; /* <-- Add this */
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 100%;
+      border: none;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .video-parallax {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  margin: 4rem 0;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+.video-parallax video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="parallax-title">
+      <video autoplay muted loop playsinline>
+        <source src="graffiti/mv8.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="overlay-text">
+        <h1>SHOREDITCH SPEAKS</h1>
+        <p>Art, Memory, and Migration in a Changing City</p>
+      </div>
+    </div>
+  </header>
+  <main>
+  <section>
+    <p>In East London’s Shoreditch, transformation is visible on every corner — not just in the glass-fronted coworking hubs or rising towers but in what remains painted on its walls. Shoreditch has long been defined by its waves of migration, rebellion, and renewal. Once <a href="https://www.ourmigrationstory.org.uk/oms/huguenot-silk-weavers-in-spitalfields" target="_blank">home to Huguenot silk weavers</a>, it became a <a href="https://www.londonmuseum.org.uk/collections/london-stories/jewish-east-end/" target="_blank">haven for Jewish families fleeing Eastern Europe in the 19th century</a>. <a href="https://www.discoveringbritain.org/content/discoveringbritain/walk%20booklets/Bengali%20East%20End%20written%20guide.pdf" target="_blank">By the 1970s, it was predominantly Bangladeshi</a>.</p>
+    <p>What remains is a palimpsest of histories. As gentrification redraws its physical and demographic borders, graffiti has emerged as one of the last unsanctioned records of the past — emotional, ephemeral, and resistant. This project explores how Shoreditch's story is being retold through its street art, guided by four key voices who speak not just of paint, but of memory, displacement, and belonging.</p>
+
+    <div class="video-parallax">
+      <video autoplay muted loop playsinline>
+        <source src="graffiti/mv3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+
+    <div class="profile-section" style="border-left-color: #ffadad;">
+      <h2 class="profile profile-1">Profile: Daniel Cohen, <a href="https://www.beigelbake.co.uk/?srsltid=AfmBOorlpOhNX1CoTah0DjHj25UYlVhbY9EizzlTDrXq8VUr7T_ugMb5" target="_blank">Beigel Bake</a></h2>
+    <iframe height="360" src="https://www.youtube.com/embed/Hw7U12xlbFc" title="Beigel Bake Interview - Daniel Cohen" allowfullscreen></iframe>
+    <div class="quote quote-1">"Second home. My second home."</div>
+<p>Brick Lane has seen generations pass through its storefronts — from Jewish traders and Bangladeshi families to hipsters and tourists. Among the few constants is Beigel Bake, a family-run Jewish bakery that’s become a landmark of the East End. “The shop has been here for just over 50 years,” says Daniel Cohen, one of its directors. “I think it was the 50th anniversary last year. We opened between 1972 and ’74.”</p>
+<p>Cohen is part of the second generation running the business. “My father passed away and my brother and myself took my dad’s share. We’re in partnership with my uncle and cousin,” he says. The bakery has always stayed in the family, and the same core team has guided it through half a century of change.</p>
+<p>The area itself, he recalls through stories passed down, was once vastly different. “It was a bit of a rough area — not very busy. There wasn't no shops, no young people. So it was a bit of a no-go area, with factories and stuff.” Beigel Bake also looked different back then. “This bakery wasn't a retail bakery — it used to be just a factory wholesaler. And it transformed into a shop.”</p>
+<p>Today, it’s one of the most recognisable storefronts on Brick Lane. Open 24/7, the bakery is famous for its hot salt beef beigels, smoked salmon and cream cheese, and traditional Jewish pastries. It has been featured in <a href="https://www.thesun.co.uk/news/33273536/beigel-bake-shop-branded-jacket/" target="_blank">international media</a> and is often recommended as a must-visit spot for both tourists and locals. Its enduring popularity stems from a mix of authenticity, family legacy, and affordability.</p>
+<p>One thing that’s helped Beigel Bake stay afloat as others around it close? Ownership. “We bought the freehold — no rent for us,” Cohen explains. “But the council tax goes up a lot. They’re robbing people.” He sympathises with other small business owners in the area: “There’s definitely a trend of small businesses being pushed out. But that’s all over the UK — not just here.”</p>
+<p>Prices and products at the bakery have had to evolve, too. “We’ve added and taken off some products. We had to change our pricing — not just because of the area, but also because of the cost of everything that’s gone up. It’s more expensive to run a business now — wages, electric, gas, council tax, stock, petrol. Everything.”</p>
+<p>Still, Cohen sees the soul of Brick Lane hanging on. “It’s still here, but it’s diminished a touch,” he reflects. “It’s getting a touch more commercial. But more or less, we’re still a unique part of London.”</p>
+<p>For Cohen, Brick Lane is deeply personal. “I used to come here and visit my dad — you know, school holidays and stuff. I’d help out and just spend time here. It was fun.”</p>
+<p>Above all, it’s the spirit of the community that keeps him rooted. “It’s a nice community — it’s a bit different to other places in London. Much friendlier. If you say hello to somebody, you’d most likely get a response. Whereas in other parts of town, people look at you like you’ve dropped down from space.”</p>
+</div>
+
+<div class="video-parallax">
+  <video autoplay muted loop playsinline>
+    <source src="graffiti/mv1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<div class="profile-section" style="border-left-color: #ffd6a5;">
+  <h2 class="profile profile-2">Profile: Dom, Co-founder of <a href="https://www.time-shoreditch.com" target="_blank">Time Shoreditch</a></h2>
+ <iframe height="360" src="https://www.youtube.com/embed/0BuPWmsjLQA" title="Interview with Dom, Time Shoreditch" allowfullscreen></iframe>
+ <div class="quote quote-2">"It’s definitely changed… from what I hear, it’s changed a lot since the mid-90s."</div>
+    <p>Just off Brick Lane, tucked behind vibrant murals and side alleys, sits Time Shoreditch, a multi-gender salon founded by Dom and his two close friends, Tommy and Callum. “We worked together about eight years ago, just around the corner on Riverton Street,” Dom recalls. “We all went slightly different ways within our careers… and it came to a point in our lives where all of us were ready to do something.”</p>
+    <p>That something became a business rooted in care. “Anyone’s welcome… it’s about creating a really, really nice atmosphere where hopefully not only our friends and family, but lots of the guys and girls that come in want to be here. They don’t just come in for a haircut — they want to hang out and be looked after.”</p>
+    <p>For Dom, Shoreditch isn’t just a business district. It’s personal. “Shoreditch was our home… where we felt like we had a second growing up.” But even in the eight years he’s worked in and around the area, he’s noticed shifts: “It definitely feels a little less risky… a lot more money in Shoreditch, a lot more gentrification — which has positives and negatives.”</p>
+    <p>Like many residents, Dom sees street art as both reflection and resistance. “The street art around here has probably gone a little bit more political. Before, it was probably more focused around owning your area and expressing yourself… whereas now, I think the more money here creates an atmosphere that would be more controversial to street art.”</p>
+    <p>He also links the artwork to Shoreditch’s identity. “It’s a really nice reason to come to Shoreditch and look around — there’s tons of it. There’s some <a href="https://www.myartbroker.com/artist-banksy/guides/londons-top-12-banksy-murals" target="_blank">Banksys around here</a>…”</p>
+    <p>When asked whether immigrant histories are still visible, Dom reflects on Brick Lane’s layered past. “I believe the Brick Lane area used to be mainly Jewish in the early 19th century. Then with the 40s and 50s, Bangladeshi and Indian people moved over… they seem to now be way more prevalent in that area still.” For him, it’s not gone, but faded: “Probably less so… but I think it’s still quite prevalent.”</p>
+    <p>On what remains of Shoreditch’s “older identity,” Dom highlights the spaces that have survived: <a href="https://londonist.com/pubs/pubs/pride-of-spitalfields" target="_blank">The Pride of Spitalfields</a>, <a href="https://tenbells.com/" target="_blank">Ten Bells</a>, <a href="https://www.thecarpentersarmsw1.co.uk/#/" target="_blank">The Carpenter’s Arms</a> — supposedly where the <a href="https://www.morningadvertiser.co.uk/Article/2019/01/07/New-owner-for-East-End-pub-with-Kray-twins-history/" target="_blank">Krays bought their mum a pub</a>… and then obviously, you’ve had places like Brick Lane Bagels.”</p>
+    <p>The media, he says, doesn’t always reflect the Shoreditch he knows. “They maybe show it off to be worse than it is… it’s a lot safer than it used to be, but there’s a lot more money here. I think it’s still got this aura of being a bit rough and ready, and I don’t think that is true — especially compared to lots of other parts of London.”</p>
+  </div>
+
+  <div class="video-parallax">
+    <video autoplay muted loop playsinline>
+      <source src="graffiti/mv4.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>  
+  
+  <div class="profile-section" style="border-left-color: #caffbf;">
+    <h2 class="profile profile-3">Profile: Jordan, Graffiti Artist</h2>
+    <iframe height="360" src="https://www.youtube.com/embed/KY9RiWtd05o" title="Interview with Jordan, Graffiti Artist" allowfullscreen></iframe>
+    <div class="quote quote-3">"If it was more accepted, I think less artists would hold emotions in."</div>
+    <p>In Shoreditch, where the walls speak louder than street signs, Jordan’s art becomes both outlet and resistance. He started painting at just 12 or 13, drawn in by what he saw around him: “Just friends, friends and family to be honest… just seeing a lot of people from the area that I grew up in doing [graffiti].” No one formally taught him. “It’s not a teaching thing… I kind of just practiced all the time. Any piece of paper, any pen in my hand — that’s where it started.”</p>
+    <p>Jordan’s work evolved from tagging with friends to becoming a professional artist. “I used to paint a lot with friends… and then years go on, everyone changes paths. I kind of learned how to monetize my art instead of just doing it for fun.” His pieces now range from personal expression to commissioned murals, like the one I watched him create for a crypto company — its name woven directly into the design.</p>
+    <p>But money hasn’t dulled the emotion in his work. “I grew up holding a lot of stuff in… and I think graffiti was an outlet. If it was more accepted, I think less artists would hold emotions in.” Today, the message in his pieces varies. “Obviously, I paint for other people now, I don’t paint for myself… but I like change. I very rarely paint the same thing.”</p>
+    <p>Shoreditch holds a special place for Jordan — not because it’s home, but because it lets him be. “Just because it’s more accepted here… there’s less issues when you paint here. And there’s a lot of tourists, a lot of people that appreciate the art.” He’s met locals who tell him: “They can’t wait to get out of their house and see what new pieces of art have been put up.” That kind of organic enthusiasm fuels him.</p>
+    <p>Like the neighborhood, graffiti here has changed. “It’s more like… you see a lot of characters instead of lettering.” And while that shift tracks with broader changes in street art, Jordan is clear-eyed about the impact of branding. “I think it’s good if the artists are being used for that… but I don’t see a lot of [graffiti] artists really getting helped in that type of way. I think more brands need to reach out to artists themselves instead of going through third-party companies.”</p>
+    <p>Now, he’s often commissioned by local businesses to do murals on shops, garages, and even vans. “That’s perfect — to help someone else and do your art at the same time and be rewarded for it.”</p>
+    <p>That acceptance, however, wasn’t always guaranteed. “When I was younger, yeah, I wasn’t painting for companies, I was painting for myself — causing vandalism, I mean. But no more. I sway away from that whenever I can.”</p>
+  </div>
+
+  <div class="video-parallax">
+    <video autoplay muted loop playsinline>
+      <source src="graffiti/mv5.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>  
+
+  <div class="profile-section" style="border-left-color: #80bfff;">
+    <h2 class="profile profile-4">Profile: Don, Graffiti Artist</h2>
+    <iframe height="360" src="https://www.youtube.com/embed/w7uSoFtqaPs" title="Interview with Don, Graffiti Artist" allowfullscreen></iframe>
+    <div class="quote quote-4">"It’s just fun and games and sport — a social event almost."</div>
+    <p>Don’s connection to Shoreditch is less about home and more about energy. “I paint as far and wide as possible,” he says. “But Shoreditch has just become one of those areas where it's almost like a designated spot… it’s a lot easier to paint out here.” He’s not wrong — while the legal status of graffiti remains murky, <a href="https://www.countrylife.co.uk/property/210402-210402" target="_blank">Shoreditch has become a canvas for globally admired artists and an unspoken sanctuary for many</a>.</p>
+    <p>Don started like many others: chasing art on the street. “Just seeing the work in the beginning, and basically just going on missions and adventures with my friends.” That thrill never left. Even now, he says, “this is just fun and games and sport — it’s kind of like a social event almost for me; I’m hanging out with my mate and I’m just making something nice.”</p>
+    <p>Self-taught and evolving, he explains that graffiti is different from traditional painting. “It’s more about designing a moniker and putting it everywhere.” His inspiration is eclectic: “Graffiti, surrealism… a lot of stuff really. I go to exhibitions. Even at the Tate, there’s a couple pieces I go to see. There’s so much going on in London — that’s the cool thing.”</p>
+    <p>He’s done work all over the city, including a collaborative piece with his friend Drake behind the Old Truman Brewery — <a href="https://www.countrylife.co.uk/property/210402-210402" target="_blank">a building that itself is a symbol of Shoreditch’s industrial past and commercial reinvention</a>.</p>
+    <p>Don is familiar with graffiti’s uneasy relationship with commerce. “I often work for companies — maybe not marketing firms, but all sorts of different people… and I suppose it’s more about ethics.” For him, even artists must ask: why do they want this? what’s the purpose? “It’s not really cool that a lot of these big brands and marketing firms — they say graffiti’s not cool, but then why are all these companies using it?”</p>
+    <p>Despite being approached for commissions — to do shops, trucks, even garage doors — Don feels many small artists still get overlooked. “A few companies have become really big and they’re taking a lot of work out of the mouths of patrons.”</p>
+    <p>He’s also honest about the risks. “Yeah, you do get into trouble. I mean, I think it’s the same around the world — the city would like to say they care about art…” but that doesn’t always translate to support for those doing it illegally or without commercial backing.</p>
+    <p>If a young artist were to ask how to start, Don keeps it simple: “Get some spray cans and start painting.”</p>
+   </div>
+
+   <div class="video-parallax">
+    <video autoplay muted loop playsinline>
+      <source src="graffiti/mv7.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>  
+
+  <h2 class="map-title">Shoreditch Street Art Map</h2>
+  <p>This interactive map documents over 40 street art pieces captured across the neighborhood. Each marker links to a single graffiti mural or tag photographed in the area.</p>
+  <iframe src="shoreditchgraffiti.html" height="600" title="Shoreditch Street Art Map"></iframe>
+   
+    <h2 class="profile profile-5">Last Words</h2>
+    <p>Shoreditch speaks — through bakery windows, barbershop chairs, and the paint-streaked walls that hold its stories. From the salt beef beigels of Beigel Bake to the swirling signatures of street artists, the neighbourhood remains a layered space of survival and self-expression. Though gentrification has reshaped its skyline and shifted its communities, what persists is the spirit of those who refuse to be erased — shopkeepers who remember, artists who resist, and migrants who remake the city in their image.</p>
+    <p>This project does not seek to freeze Shoreditch in time. Instead, it offers a living, breathing archive — one that invites us to slow down, look closer, and listen. Whether in faded tags or new commissions, what’s written on Shoreditch’s walls is not just art. It’s memory. It’s protest. It’s home.</p>
+  </section>
+</div>
+</main>
+
+
+  <footer>
+    © 2025 Shoreditch Speaks. Designed with heart in London.
+  </footer>
+</body>
+</html>
