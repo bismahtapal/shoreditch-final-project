@@ -19,16 +19,14 @@
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-  // Initialize map centered around Shoreditch
+
   var map = L.map('map').setView([51.522, -0.075], 17);
 
-  // Add OpenStreetMap tile layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
 
-  // Add markers
-  const graffitiLocations = [
+  const GraffitiLocations = [
   { lat: 51.522491, lng: -0.075314, img: "IMG_2647.JPG" },
     { lat: 51.523453, lng: -0.074914, img: "IMG_2660.JPG" },
     { lat: 51.523117, lng: -0.075117, img: "IMG_2666.JPG" },
@@ -80,10 +78,10 @@
     { lat: 51.526431, lng: -0.084986, img: "IMG_2927.JPG" }
   ];
 
-  graffitiLocations.forEach(loc => {
+  GraffitiLocations.forEach(loc => {
     L.marker([loc.lat, loc.lng])
       .addTo(map)
-      .bindPopup(`<strong>${loc.img}</strong><br><img src="graffiti/${loc.img}" width="200px">`);
+      .bindPopup(`<strong>${loc.img}</strong><br><img src="Graffiti/${loc.img}" width="200px">`);
   });
 </script>
 
